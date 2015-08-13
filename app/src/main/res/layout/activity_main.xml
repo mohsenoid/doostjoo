@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/btColor1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/package_normal_color1"
+        android:elevation="10dp"
+        android:onClick="onClick" />
+
+    <ImageButton
+        android:id="@+id/btColor2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/package_normal_color2"
+        android:elevation="9dp"
+        android:onClick="onClick" />
+
+    <ImageButton
+        android:id="@+id/btColor3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/package_normal_color3"
+        android:elevation="8dp"
+        android:onClick="onClick" />
+
+    <ImageButton
+        android:id="@+id/btColor4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/package_normal_color4"
+        android:elevation="7dp"
+        android:onClick="onClick"
+        android:singleLine="false" />
+
+    <ImageButton
+        android:id="@+id/btColor5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/package_normal_color5"
+        android:elevation="6dp"
+        android:onClick="onClick" />
+
+    <ImageButton
+        android:id="@+id/btColor6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/package_normal_color6"
+        android:elevation="5dp"
+        android:onClick="onClick" />
+
+
+</LinearLayout>

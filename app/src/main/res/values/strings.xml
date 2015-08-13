@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">دوستجور</string>
+    <string name="title_activity_blinker">دوستجور</string>
+    <string name="title_activity_settings">تنظیمات دوستجور</string>
+
+    <string name="action_settings">تنظیمات</string>
+
+    <string name="action_share">اشتراک با...</string>
+    <string name="action_sendsms">ارسال با پیامک</string>
+
+    <string name="share_string">دنبال نور چشمک زن %1$s بگرد. دوستجورم رو روشن کردم.</string>
+    <string name="share_using">ارسال با</string>
+
+    <string-array name="colors_name">
+        <item>سبز</item>
+        <item>آبی</item>
+        <item>بنفش</item>
+        <item>زرد</item>
+        <item>نارنجی</item>
+        <item>قرمز</item>
+    </string-array>
+
+    <string-array name="quick_start_colors">
+        <item>غیرفعال</item>
+        <item>سبز</item>
+        <item>آبی</item>
+        <item>بنفش</item>
+        <item>زرد</item>
+        <item>نارنجی</item>
+        <item>قرمز</item>
+    </string-array>
+
+    <string name="color_package">پکیج رنگ</string>
+    <string name="quick_start">شروع فوری</string>
+    <string name="active">فعال</string>
+    <string name="inactive">غیرفعال</string>
+
+    <string-array name="color_packages_name">
+        <item>کلاسیک</item>
+        <item>تیره</item>
+        <item>نئون</item>
+        <item>مداد شمعی</item>
+    </string-array>
+</resources>

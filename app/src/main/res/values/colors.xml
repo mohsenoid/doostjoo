@@ -1,0 +1,59 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="dark_gray">#222</color>
+    <color name="gray">#555</color>
+    <color name="accent">#aaa</color>
+
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="background">#e5e5e5</color>
+    <color name="half_black">#808080</color>
+    <color name="white">#fafafa</color>
+    <color name="white_pressed">#f1f1f1</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
+
+    <array name="color_packages">
+        <item>@array/color_package_normal</item>
+        <item>@array/color_package_dark</item>
+        <item>@array/color_package_neon</item>
+        <item>@array/color_package_pastel</item>
+    </array>
+
+    <array name="color_package_normal">
+        <item>@color/package_normal_color1</item>
+        <item>@color/package_normal_color2</item>
+        <item>@color/package_normal_color3</item>
+        <item>@color/package_normal_color4</item>
+        <item>@color/package_normal_color5</item>
+        <item>@color/package_normal_color6</item>
+    </array>
+
+    <array name="color_package_dark">
+        <item>@color/package_dark_color1</item>
+        <item>@color/package_dark_color2</item>
+        <item>@color/package_dark_color3</item>
+        <item>@color/package_dark_color4</item>
+        <item>@color/package_dark_color5</item>
+        <item>@color/package_dark_color6</item>
+    </array>
+    <array name="color_package_neon">
+        <item>@color/package_neon_color1</item>
+        <item>@color/package_neon_color2</item>
+        <item>@color/package_neon_color3</item>
+        <item>@color/package_neon_color4</item>
+        <item>@color/package_neon_color5</item>
+        <item>@color/package_neon_color6</item>
+    </array>
+    <array name="color_package_pastel">
+        <item>@color/package_pastel_color1</item>
+        <item>@color/package_pastel_color2</item>
+        <item>@color/package_pastel_color3</item>
+        <item>@color/package_pastel_color4</item>
+        <item>@color/package_pastel_color5</item>
+        <item>@color/package_pastel_color6</item>
+    </array>
+</resources>
