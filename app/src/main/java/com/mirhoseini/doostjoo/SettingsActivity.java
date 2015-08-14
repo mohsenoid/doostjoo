@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
+import com.google.android.gms.analytics.Tracker;
 import com.mirhoseini.doostjoo.utils.AppSettings;
 import com.mirhoseini.doostjoo.utils.Constants;
 
@@ -15,11 +16,16 @@ public class SettingsActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
     private Spinner spPackageColors, spQuickStart;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+//        // Get a Tracker (should auto-report)
+//        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+//        mTracker = application.getTracker();
 
         initToolbar();
         initForm();
@@ -97,4 +103,20 @@ public class SettingsActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        //Get an Analytics tracker to report app starts and uncaught exceptions etc.
+//        GoogleAnalytics.getInstance(this).reportActivityStart(this);
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//
+//        //Stop the analytics tracking
+//        GoogleAnalytics.getInstance(this).reportActivityStop(this);
+//    }
 }

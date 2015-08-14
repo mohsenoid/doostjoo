@@ -26,11 +26,16 @@ public class BlinkerActivity extends ActionBarActivity implements View.OnClickLi
     private FloatingActionButton actionSendSMS;
     private FloatingActionButton actionShare;
     private String colorMessage;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blinker);
+
+        // Get a Tracker (should auto-report)
+//        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+//        mTracker = application.getTracker();
 
         currentColor = getIntent().getIntExtra(
                 Constants.SELECTED_COLOR,
@@ -123,5 +128,21 @@ public class BlinkerActivity extends ActionBarActivity implements View.OnClickLi
                 break;
         }
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        //Get an Analytics tracker to report app starts and uncaught exceptions etc.
+//        GoogleAnalytics.getInstance(this).reportActivityStart(this);
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//
+//        //Stop the analytics tracking
+//        GoogleAnalytics.getInstance(this).reportActivityStop(this);
+//    }
 
 }

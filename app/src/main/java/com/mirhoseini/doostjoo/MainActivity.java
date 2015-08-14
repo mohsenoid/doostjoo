@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 import com.mirhoseini.doostjoo.utils.AppSettings;
 import com.mirhoseini.doostjoo.utils.CloudMessage;
@@ -247,19 +246,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         startActivity(blinkerIntent);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        //Get an Analytics tracker to report app starts and uncaught exceptions etc.
-        GoogleAnalytics.getInstance(this).reportActivityStart(this);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-        //Stop the analytics tracking
-        GoogleAnalytics.getInstance(this).reportActivityStop(this);
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        //Get an Analytics tracker to report app starts and uncaught exceptions etc.
+//        GoogleAnalytics.getInstance(this).reportActivityStart(this);
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//
+//        //Stop the analytics tracking
+//        GoogleAnalytics.getInstance(this).reportActivityStop(this);
+//    }
 }
