@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">دوستجور</string>
-    <string name="title_activity_blinker">دوستجور</string>
-    <string name="title_activity_settings">تنظیمات دوستجور</string>
+    <string name="app_name">دوستجو</string>
+    <string name="title_activity_blinker">دوستجو</string>
+    <string name="title_activity_settings">تنظیمات دوستجو</string>
     <string name="app_ver">1.0.0</string>
 
     <string name="action_settings">تنظیمات</string>
@@ -9,7 +9,7 @@
     <string name="action_share">اشتراک با...</string>
     <string name="action_sendsms">ارسال با پیامک</string>
 
-    <string name="share_string">دنبال نور چشمک زن %1$s بگرد. دوستجورم رو روشن کردم.</string>
+    <string name="share_string">دنبال نور چشمک زن %1$s بگرد. دوستجو رو روشن کردم.</string>
     <string name="share_using">ارسال با</string>
 
     <string name="app_design">طراح و برنامه نویس: محسن میرحسینی ارگي</string>
@@ -45,6 +45,8 @@
 
     <string name="active">فعال</string>
     <string name="inactive">غیرفعال</string>
+    <string name="close">بستن</string>
+    <string name="open">بازکردن</string>
 
     <string-array name="color_packages_name">
         <item>کلاسیک</item>

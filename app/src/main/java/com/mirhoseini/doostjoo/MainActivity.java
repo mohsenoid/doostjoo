@@ -1,16 +1,21 @@
 package com.mirhoseini.doostjoo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.android.gms.analytics.Tracker;
 import com.mirhoseini.doostjoo.utils.AppSettings;
+import com.mirhoseini.doostjoo.utils.CloudMessage;
 import com.mirhoseini.doostjoo.utils.Constants;
 
 import java.util.ArrayList;
@@ -18,16 +23,54 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
+    static String condition = "0";
     private static boolean isAfterQuickStart = false;
     ArrayList<ImageButton> colorButtons;
     private Toolbar toolbar;
     private int[] colors;
     private String[] colorsName;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getTracker();
+
+        //check play services
+        /*boolean hasPlayServices = CloudMessage.checkPlayServices(this);
+
+        if (hasPlayServices) {
+            // If this check succeeds, proceed with normal processing.
+            // Otherwise, prompt user to get valid Play Services APK.
+            easyTracker.send(MapBuilder
+                    .createEvent("play_services",     // Event category (required)
+                            "check_play_services",  // Event action (required)
+                            "with_play_services",   // Event label
+                            null)            // Event value
+                    .build());
+        } else {
+            easyTracker.send(MapBuilder
+                    .createEvent("play_services",     // Event category (required)
+                            "check_play_services",  // Event action (required)
+                            "without_play_services",   // Event label
+                            null)            // Event value
+                    .build());
+        }
+*/
+        // start GCM
+        CloudMessage.startGCM(this);
+
+        // show GCM alert
+        condition = getIntent().getStringExtra("alert");
+        if (condition != null) {
+            String ms = getIntent().getStringExtra("msg");
+            alertCloudMessage(ms);
+        }
+
 
         colorsName = getResources().getStringArray(R.array.colors_name);
 
@@ -37,6 +80,51 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         checkQuickStart();
     }
+
+    private void alertCloudMessage(String ms) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle(getResources().getString(R.string.app_name));
+        alertDialogBuilder
+                .setMessage(ms)
+                .setCancelable(false)
+                .setNegativeButton(getString(R.string.close), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        if (ms.contains("http")) {
+            // extract url from message
+            int start = ms.indexOf("http");
+
+            int len = ms.length();
+
+            int endSpace = ms.indexOf(" ", start);
+            endSpace = endSpace == -1 ? len : endSpace;
+
+            int endEnter = ms.indexOf("\n", start);
+            endEnter = endEnter == -1 ? len : endEnter;
+
+            final String url = ms.substring(start, Math.min(Math.min(endSpace, endEnter), len));
+
+            // remove url from message
+            //ms = ms.replaceFirst(url, "");
+
+            alertDialogBuilder.setPositiveButton(getString(R.string.open), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                    startActivity(intent);
+                }
+            });
+        }
+
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
 
     private void checkQuickStart() {
         int i = AppSettings.getInt(this, Constants.DEFAULT_COLOR, 0);
@@ -93,6 +181,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     private void fillColors(int colorPackage) {
         colors = getResources().getIntArray(colorPackage);
+        if (colors.length == 0) {
+            AppSettings.setValue(this, Constants.LAST_COLOR_PACKAGE, R.array.color_package_normal);
+            colors = getResources().getIntArray(R.array.color_package_normal);
+        }
 
         if (colors != null) {
             for (int i = 0; i < colorButtons.size(); i++) {

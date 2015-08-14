@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.google.android.gms.analytics.Tracker;
 import com.mirhoseini.doostjoo.utils.AppSettings;
 import com.mirhoseini.doostjoo.utils.Constants;
 
