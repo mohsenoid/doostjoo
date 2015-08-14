@@ -42,8 +42,9 @@ public class GcmIntentService extends IntentService {
                 // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
                 // Post notification of received message.
-                String newms = extras.getString("message").toString();
-                sendNotification(newms);
+                String newms = extras.getString("message");
+                if (newms != null)
+                    sendNotification(newms);
             }
         }
         GcmBroadcastReceiver.completeWakefulIntent(intent);

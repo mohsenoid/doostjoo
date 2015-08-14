@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 import com.mirhoseini.doostjoo.utils.AppSettings;
 import com.mirhoseini.doostjoo.utils.CloudMessage;
@@ -36,10 +37,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Obtain the shared Tracker instance.
-        AnalyticsApplication application = (AnalyticsApplication) getApplication();
-        mTracker = application.getTracker();
-
         //check play services
         /*boolean hasPlayServices = CloudMessage.checkPlayServices(this);
 
@@ -61,6 +58,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     .build());
         }
 */
+
+        // Get a Tracker (should auto-report)
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getTracker();
+
         // start GCM
         CloudMessage.startGCM(this);
 
@@ -125,10 +127,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         alertDialog.show();
     }
 
-
     private void checkQuickStart() {
         int i = AppSettings.getInt(this, Constants.DEFAULT_COLOR, 0);
-        if (i != 0 && !isAfterQuickStart) {
+        if (i != 0 && !isAfterQuickStart && condition == null) {
             openBlinker(colors[i - 1], colorsName[i - 1]);
             isAfterQuickStart = true;
         }
@@ -244,5 +245,21 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         blinkerIntent.putExtra(Constants.SELECTED_COLOR, selectedColor);
         blinkerIntent.putExtra(Constants.SELECTED_COLOR_NAME, selectedColorName);
         startActivity(blinkerIntent);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        //Get an Analytics tracker to report app starts and uncaught exceptions etc.
+        GoogleAnalytics.getInstance(this).reportActivityStart(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        //Stop the analytics tracking
+        GoogleAnalytics.getInstance(this).reportActivityStop(this);
     }
 }

@@ -6,7 +6,6 @@ package com.mirhoseini.doostjoo;
 
 import android.app.Application;
 
-import com.google.android.gms.analytics.ExceptionReporter;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
@@ -15,29 +14,21 @@ import com.google.android.gms.analytics.Tracker;
  * the {@link Tracker}.
  */
 public class AnalyticsApplication extends Application {
-    public static GoogleAnalytics analytics;
-    public static Tracker tracker;
+    //Logging TAG
+    private static final String TAG = "AnalyticsApplication";
 
+    public static int GENERAL_TRACKER = 0;
+    private Tracker mTracker;
 
     public AnalyticsApplication() {
         super();
     }
 
     synchronized Tracker getTracker() {
-        if (tracker == null) {
-            analytics = GoogleAnalytics.getInstance(this);
-
-            tracker = analytics.newTracker(R.xml.analytics_global_config); // Replace with actual tracker/property Id
-            tracker.enableAdvertisingIdCollection(true);
-
-            Thread.UncaughtExceptionHandler myHandler = new ExceptionReporter(
-                    tracker,                                        // Currently used Tracker.
-                    Thread.getDefaultUncaughtExceptionHandler(),      // Current default uncaught exception handler.
-                    getApplicationContext());                                         // Context of the application.
-
-            // Make myHandler the new default uncaught exception handler.
-            Thread.setDefaultUncaughtExceptionHandler(myHandler);
+        if (mTracker == null) {
+            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+            mTracker = analytics.newTracker(R.xml.analytics_app_tracker);
         }
-        return tracker;
+        return mTracker;
     }
 }

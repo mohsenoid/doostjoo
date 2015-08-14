@@ -6,19 +6,14 @@
     <!-- The application version. Defaults to android:versionName specified in the AndroidManifest.xml -->
     <string name="ga_appVersion">1.0.0</string>
 
-    <!-- Replace placeholder ID with your tracking ID -->
-    <string name="ga_trackingId">UA-37491328-15</string>
+    <!-- the Local LogLevel for Analytics -->
+    <string name="ga_logLevel">verbose</string>
 
-    <!-- Enable Activity tracking -->
-    <bool name="ga_autoActivityTracking">true</bool>
+    <!-- how often the dispatcher should fire -->
+    <integer name="ga_dispatchPeriod">30</integer>
 
-    <!-- Enable automatic exception tracking -->
-    <bool name="ga_reportUncaughtExceptions">true</bool>
-
-    <!-- The dispatching period in seconds when Google Play services is
-         unavailable. The default period is 1800 seconds or 30 minutes -->
-    <integer name="ga_dispatchPeriod">1800</integer>
-
-    <!-- Enable dry run mode. Default is false -->
+    <!-- Treat events as test events and don't send to google -->
     <bool name="ga_dryRun">false</bool>
+
+
 </resources>
