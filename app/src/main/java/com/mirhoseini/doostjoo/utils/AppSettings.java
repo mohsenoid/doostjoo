@@ -1,4 +1,4 @@
-package com.mirhoseini.doostjoor.utils;
+package com.mirhoseini.doostjoo.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,4 +1,4 @@
-package com.mirhoseini.doostjoor.utils;
+package com.mirhoseini.doostjoo.utils;
 
 /**
  * Created by Mohsen on 8/13/15.

@@ -1,4 +1,4 @@
-package com.mirhoseini.doostjoor;
+package com.mirhoseini.doostjoo;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
-import com.mirhoseini.doostjoor.utils.AppSettings;
-import com.mirhoseini.doostjoor.utils.Constants;
+import com.mirhoseini.doostjoo.utils.AppSettings;
+import com.mirhoseini.doostjoo.utils.Constants;
 
 public class SettingsActivity extends ActionBarActivity {
 

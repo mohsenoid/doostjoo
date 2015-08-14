@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mirhoseini.doostjoor">
+    package="com.mirhoseini.doostjoo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.access_network_state" />
@@ -24,19 +24,19 @@
             android:name=".BlinkerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_blinker"
-            android:parentActivityName="com.mirhoseini.doostjoor.MainActivity">
+            android:parentActivityName="com.mirhoseini.doostjoo.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mirhoseini.doostjoor.MainActivity" />
+                android:value="com.mirhoseini.doostjoo.MainActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.mirhoseini.doostjoo.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mirhoseini.doostjoor.MainActivity" />
+                android:value="com.mirhoseini.doostjoo.MainActivity" />
         </activity>
     </application>
 

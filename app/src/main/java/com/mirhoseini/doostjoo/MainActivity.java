@@ -1,4 +1,4 @@
-package com.mirhoseini.doostjoor;
+package com.mirhoseini.doostjoo;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,8 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.mirhoseini.doostjoor.utils.AppSettings;
-import com.mirhoseini.doostjoor.utils.Constants;
+import com.mirhoseini.doostjoo.utils.AppSettings;
+import com.mirhoseini.doostjoo.utils.Constants;
 
 import java.util.ArrayList;
 

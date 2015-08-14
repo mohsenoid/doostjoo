@@ -2,6 +2,7 @@
     <string name="app_name">دوستجور</string>
     <string name="title_activity_blinker">دوستجور</string>
     <string name="title_activity_settings">تنظیمات دوستجور</string>
+    <string name="app_ver">1.0.0</string>
 
     <string name="action_settings">تنظیمات</string>
 
@@ -10,6 +11,12 @@
 
     <string name="share_string">دنبال نور چشمک زن %1$s بگرد. دوستجورم رو روشن کردم.</string>
     <string name="share_using">ارسال با</string>
+
+    <string name="app_design">طراح و برنامه نویس: محسن میرحسینی ارگي</string>
+    <string name="app_facebook1">به ما بپيونديد:</string>
+    <string name="app_facebook2" translatable="false">http://www.facebook.com/doostjoo</string>
+    <string name="app_email" translatable="false">doostjoo@mirhoseini.com</string>
+
 
     <string-array name="colors_name">
         <item>سبز</item>
@@ -31,7 +38,11 @@
     </string-array>
 
     <string name="color_package">پکیج رنگ</string>
+    <string name="color_package_details">از این طریق میتوانید به رنگهای متنوع دیگری دسترسی پیدا کنید.</string>
+
     <string name="quick_start">شروع فوری</string>
+    <string name="quick_start_details">با فعال کردن این گزینه اپلیکیشن در بدو ورود اقدام به نمایش رنگ انتخابی شما میکند.</string>
+
     <string name="active">فعال</string>
     <string name="inactive">غیرفعال</string>
 

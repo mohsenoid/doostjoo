@@ -1,4 +1,4 @@
-package com.mirhoseini.doostjoor;
+package com.mirhoseini.doostjoo;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,8 +8,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.mirhoseini.doostjoor.utils.AppSettings;
-import com.mirhoseini.doostjoor.utils.Constants;
+import com.mirhoseini.doostjoo.utils.AppSettings;
+import com.mirhoseini.doostjoo.utils.Constants;
 
 import net.i2p.android.ext.floatingactionbutton.FloatingActionButton;
 import net.i2p.android.ext.floatingactionbutton.FloatingActionsMenu;
