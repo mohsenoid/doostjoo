@@ -17,6 +17,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            versionNameSuffix 'debug'
+        }
+        free {
+            versionNameSuffix 'free'
+        }
     }
 }
 
@@ -25,5 +31,6 @@ dependencies {
     compile 'com.android.support:support-annotations:22.2.1'
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'net.i2p.android.ext:floatingactionbutton:1.10.0'
-    compile 'com.google.android.gms:play-services:7.8.0'
+    compile 'com.google.android.gms:play-services-analytics:7.8.0'
+    compile 'com.google.android.gms:play-services-gcm:7.8.0'
 }
