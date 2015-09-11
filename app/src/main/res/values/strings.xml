@@ -54,4 +54,11 @@
         <item>نئون</item>
         <item>مداد شمعی</item>
     </string-array>
+
+    <string name="crash_toast_text">وقوع خطا در برنامه \n این مشکل به صورت خودکار به پشتیبانی ارسال می شود</string>
+    <string name="crash_dialog_title">خطا در اجرای اپلیکیشن</string>
+    <string name="crash_dialog_text">خطایی در اجرای اپلیکیشن وقوع داده که موجب توقف آن شده. شما میتوانید با ارسال این خطا در رفع آن ما را یاری رسانید.</string>
+    <string name="crash_dialog_comment_prompt">میتوانید توضیحات خود را اضافه نمایید:</string>
+    <string name="crash_dialog_ok_toast">با تشکر از همکاری شما !</string>
+    <string name="crash_user_email_label">ایمیل شما برای تماس در صورت لزوم</string>
 </resources>
